@@ -39,18 +39,18 @@
               </div>
               <div class="col-xs-3">
                 <h3> <%= @avg_rating %></h3>
-                <p>Average rating review  </p>
+                <p> <%=t('views.profiles.teacher.average_rating_review')%> </p>
               </div>
               <div class="col-xs-3">
                 <h3> <%= @ratings.count %> </h3>
-                <p> number of reviews </p>
+                <p> <%=t('views.profiles.teacher.number_of_reviews')%> </p>
               </div>
             </div>
           </div>
 
           <hr class='hr-half'>
 
-          <h4> <strong>About me</strong> </h4>
+          <h4> <strong> <%=t('views.profiles.teacher.about_me')%> </strong> </h4>
           <p><%=  @car.bio.html_safe %></p>
           <br>
           <h4> <strong>Video</strong> </h4>
@@ -59,11 +59,11 @@
          <!--  <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="<%= @car.video_URL %>"></iframe> -->
 
-             <p> <%= @car.user.first_name.capitalize  %>  <%= t('.views.profile.teacher.has_no_videos')%> </p>
+             <p> <%= @car.user.first_name.capitalize  %>  <%= t('views.profile.teacher.has_no_videos')%> </p>
          <!--  </div> -->
 
           <% elsif %>
-             <p> <%= @car.user.first_name.capitalize  %>  <%= t('.views.profile.teacher.has_no_videos')%> </p>
+             <p> <%= @car.user.first_name.capitalize  %>  <%= t('views.profile.teacher.has_no_videos')%> </p>
 
           <% end %>
         </div>
@@ -79,7 +79,7 @@
               method: :delete,
               data: { confirm: I18n.t('.Are_you sure?') } %>
           <% else %>
-           <%= link_to t('.book_me'), new_car_journey_path(@car), :class => "btn btn-success btn-block" %>
+           <%= link_to t('book_me'), new_car_journey_path(@car), :class => "btn btn-success btn-block" %>
           <% end %>
        </div>
        <br>
@@ -88,7 +88,7 @@
        <span> <%= l @car.created_at, format: :short %></span>
        <br>
        <p class='fa fa-comments'></p>
-       <%= @comments.count %> <%= t('comments') %>
+       <%= @comments.count %> <%= t('views.profiles.comments') %>
        <br>
        <br>
 
@@ -96,7 +96,7 @@
 
               <div class="<%= @photo_verified ? 'verified' : "unverified" %>" id="photo">
                 <p>
-                  <%= t('.photo_verified')%>
+                  <%= t('photo_verified')%>
                   <% if @photo_verified %>
                   <i class="fa fa-check"></i>
                   <% else %>
