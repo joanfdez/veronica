@@ -47,7 +47,7 @@
         <div class="col-xs-3">
           <p>
             <i class="fa fa-eur" aria-hidden="true"></i>
-            <strong> <%= car.price_hour %>/hr </strong>
+            <strong> <%= t'(views.cars_card.price_hour') %>/hr </strong>
          </p>
           <p>
             <div class="<%= car.video_URL != "" ? 'verified' : "unverified" %>" id="bank">
@@ -71,7 +71,7 @@
 
   <ul class="list-inline">
     <li>
-       <strong> <%= ratings.count %>  </strong> <%= t('.reviews') %>
+       <strong> <%= t('views.cars_card.ratings.count') %>  </strong> <%= t('views.cars_card.reviews') %>
     </li>
     <li >
       <% journeys = Journey.where(car: car) %>
